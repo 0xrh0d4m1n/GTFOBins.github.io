@@ -3,13 +3,13 @@ functions:
   file-read:
     - code: |
         LFILE=file_to_read
-        join -a 2 /dev/null $LFILE
+        basez "$LFILE" | basez --decode
   suid:
     - code: |
         LFILE=file_to_read
-        ./join -a 2 /dev/null $LFILE
+        ./basez "$LFILE" | basez --decode
   sudo:
     - code: |
         LFILE=file_to_read
-        sudo join -a 2 /dev/null $LFILE
+        sudo basez "$LFILE" | basez --decode
 ---
